@@ -1,0 +1,19 @@
+paseanDog
+PetSense
+Pet mania
+Pasea Ya
+Walk Dog
+
+PERFIL DEL WALKER
+Capacitación para los walkers(instructivo + video)
+Aceptar términos y condiciones (compromiso del walker)
+Kit starter pack walker edition (agua, plato, caramelo, bolsa biodegradable, multi correa)
+Arrancan con 10 puntos, según sanciones se van restando. 
+Cuando llega a 0 se da baja( dejar perro, perder perro, robar perro, lastimar perro, 
+vender perro etc) - validación con dni
+
+En las calificación/estrellas también se debe escribir un comentario que figura en el perfil
+del walker( como mínimio 10 caracteres)
+
+Póliza opcional para la mascota $$$
+
