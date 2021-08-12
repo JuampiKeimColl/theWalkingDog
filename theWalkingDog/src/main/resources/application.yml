@@ -1,3 +1,4 @@
+
 # Configuración Mail Sender
 spring:
   mail: 
@@ -33,4 +34,3 @@ server:
   error:
     whitelabel:
       enabled: false
-
