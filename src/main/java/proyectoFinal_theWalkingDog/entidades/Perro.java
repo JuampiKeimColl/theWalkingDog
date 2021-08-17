@@ -1,5 +1,6 @@
-package entidades;
+package proyectoFinal_theWalkingDog.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Perro {
+public class Perro implements Serializable {
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -27,7 +28,6 @@ public class Perro {
     private boolean bozalPerro;
     private String observacionPerro;
     private boolean ddjjPerro;
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAltaPerro;
     @Temporal(TemporalType.TIMESTAMP)
@@ -36,6 +36,7 @@ public class Perro {
     @ManyToOne
     private Usuario usuarioPerro;
     private boolean activoPerro;
+    @OneToOne
     private Comentarios comentarioPerro;
     private double puntuacionPerro;
 

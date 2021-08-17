@@ -1,6 +1,7 @@
 
-package entidades;
+package proyectoFinal_theWalkingDog.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Paseo {
+public class Paseo implements Serializable {
    
     @Id
     @GeneratedValue(generator = "uuid")
