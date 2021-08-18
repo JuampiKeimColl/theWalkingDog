@@ -1,5 +1,4 @@
-
-package proyectoFinal_theWalkingDog.entidades;
+package Final_theWalkingDog.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,7 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Paseo implements Serializable {
-   
+
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
@@ -22,7 +21,6 @@ public class Paseo implements Serializable {
     private Date horaInicioPaseo;
     @Temporal(TemporalType.TIMESTAMP)
     private Date horaFinPaseo;
-    private double precioPaseo;
     private boolean conformidadPaseo;
     @ManyToOne
     private Perro perro;
@@ -32,12 +30,11 @@ public class Paseo implements Serializable {
     public Paseo() {
     }
 
-    public Paseo(String idPaseo, Date horaInicioPaseo, Date horaFinPaseo, double precioPaseo, boolean conformidadPaseo, Perro perro, Walker walker) {
+    public Paseo(String idPaseo, Date horaInicioPaseo, Date horaFinPaseo, boolean conformidadPaseo, Perro perro, Walker walker) {
         this.idPaseo = idPaseo;
         this.horaInicioPaseo = horaInicioPaseo;
         this.horaFinPaseo = horaFinPaseo;
-        this.precioPaseo = precioPaseo;
-        this.conformidadPaseo = conformidadPaseo;
+                this.conformidadPaseo = conformidadPaseo;
         this.perro = perro;
         this.walker = walker;
     }
@@ -66,14 +63,7 @@ public class Paseo implements Serializable {
         this.horaFinPaseo = horaFinPaseo;
     }
 
-    public double getPrecioPaseo() {
-        return precioPaseo;
-    }
-
-    public void setPrecioPaseo(double precioPaseo) {
-        this.precioPaseo = precioPaseo;
-    }
-
+   
     public boolean isConformidadPaseo() {
         return conformidadPaseo;
     }
@@ -100,8 +90,7 @@ public class Paseo implements Serializable {
 
     @Override
     public String toString() {
-        return "Paseo{" + "idPaseo=" + idPaseo + ", horaInicioPaseo=" + horaInicioPaseo + ", horaFinPaseo=" + horaFinPaseo + ", precioPaseo=" + precioPaseo + ", conformidadPaseo=" + conformidadPaseo + ", perro=" + perro + ", walker=" + walker + '}';
+        return "Paseo{" + "idPaseo=" + idPaseo + ", horaInicioPaseo=" + horaInicioPaseo + ", horaFinPaseo=" + horaFinPaseo +  ", conformidadPaseo=" + conformidadPaseo + ", perro=" + perro + ", walker=" + walker + '}';
     }
-    
-    
+
 }

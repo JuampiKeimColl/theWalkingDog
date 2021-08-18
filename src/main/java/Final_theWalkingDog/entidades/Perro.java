@@ -1,4 +1,4 @@
-package proyectoFinal_theWalkingDog.entidades;
+package Final_theWalkingDog.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
