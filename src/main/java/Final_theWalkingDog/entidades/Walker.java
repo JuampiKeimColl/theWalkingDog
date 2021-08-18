@@ -46,14 +46,15 @@ public class Walker implements Serializable {
     public Walker() {
     }
 
+
     public Walker(String idWalkerDNI, String nombreWalker, String apellidoWalker,
-             String correoWalker, String contraseniaWalker,
+            String correoWalker, String contraseniaWalker,
             String telefonoWalker, String direccionWalker,
             String barrioWalker, int manadaWalker, Date fechaAltaWalker,
             Date fechaModWalker, int totalPaseosWalker, double puntuacionWalker,
             Comentarios comentraioWalker, int penalizacionWalker,
             Paseo turnoPaseo, Foto fotoWalker, Foto fotoDNIWalker,
-            boolean activoWalker, double precioPaseo ) {
+            boolean activoWalker, double precioPaseo) {
         this.idWalkerDNI = idWalkerDNI;
         this.nombreWalker = nombreWalker;
         this.apellidoWalker = apellidoWalker;
@@ -70,6 +71,7 @@ public class Walker implements Serializable {
         this.comentraioWalker = comentraioWalker;
         this.penalizacionWalker = penalizacionWalker;
         this.turnoPaseo = turnoPaseo;
+        this.precioPaseo = precioPaseo;
         this.fotoWalker = fotoWalker;
         this.fotoDNIWalker = fotoDNIWalker;
         this.activoWalker = activoWalker;
@@ -235,6 +237,7 @@ public class Walker implements Serializable {
     public void setActivoWalker(boolean activoWalker) {
         this.activoWalker = activoWalker;
     }
+ 
 
     @Override
     public String toString() {
