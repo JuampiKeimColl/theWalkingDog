@@ -1,5 +1,6 @@
 package Final_theWalkingDog;
 
+import Final_theWalkingDog.servicios.WalkerServicios;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +9,13 @@ public class ProyectoFinalApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalApplication.class, args);
+                
+                WalkerServicios ws = new WalkerServicios();
+                
+                ws.crearWalker();
+                
+                
+                
 	}
 
 }
