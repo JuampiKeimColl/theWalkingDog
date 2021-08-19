@@ -13,28 +13,28 @@ public class WalkerServicios {
     @Autowired
     private WalkerRepositorio walkerrepositorio;
     
-    public void crearWalker(){
+    public void crearWalker(String IdWalkerDNI, String nombreWalker, String apellidoWalker, String correoWalker,String contraseniaWalker, String telefonoWalker, String direccionWalker, String barrioWalker, int manadaWalker, int precioPaseo){
         
         Walker walker = new Walker();
         
-        walker.setIdWalkerDNI("498489");
-        walker.setNombreWalker("asfaf");
-        walker.setApellidoWalker("asfaf");
-        walker.setCorreoWalker("asfaf");
-        walker.setContraseniaWalker("asfaf");
-        walker.setTelefonoWalker("151515");
-        walker.setDireccionWalker("asfaf");
-        walker.setBarrioWalker("asfaf");
-        walker.setManadaWalker(10);
+        walker.setIdWalkerDNI(IdWalkerDNI);
+        walker.setNombreWalker(nombreWalker);
+        walker.setApellidoWalker(apellidoWalker);
+        walker.setCorreoWalker(correoWalker);
+        walker.setContraseniaWalker(contraseniaWalker);
+        walker.setTelefonoWalker(telefonoWalker);
+        walker.setDireccionWalker(direccionWalker);
+        walker.setBarrioWalker(barrioWalker);
+        walker.setManadaWalker(manadaWalker);
         Date hoy = new Date();
         walker.setFechaAltaWalker(hoy);
         walker.setFechaModWalker(hoy);
-        walker.setTotalPaseosWalker(15);
-        walker.setPuntuacionWalker(15);
+//        walker.setTotalPaseosWalker(15);
+//        walker.setPuntuacionWalker(15);
 //        walker.setComentarioWalker("afnasf");
         walker.setPenalizacionWalker(10);
 //        walker.setTurnoPaseo(turnoPaseo);
-        walker.setPrecioPaseo(150);
+        walker.setPrecioPaseo(precioPaseo);
 //        walker.setFotoWalker(fotoWalker);
 //        walker.setFotoDNIWalker(FotoDNIWalker);
         walker.setActivoWalker(true);
