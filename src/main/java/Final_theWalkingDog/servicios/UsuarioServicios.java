@@ -84,7 +84,7 @@ public class UsuarioServicios {
 
             usuarioRepositorio.save(usuario1);
         } else {
-            throw new Exception("La editorial no fue encontrada");
+            throw new Exception("El usuario no fue encontrado");
         }
 
     }
