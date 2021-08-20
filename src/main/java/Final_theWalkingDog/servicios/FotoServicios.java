@@ -17,11 +17,11 @@ public class FotoServicios {
        
         Foto foto = new Foto();
         
-        foto.setUri("aflknsal");
-        foto.setFileName("fksña");
-        foto.setFechaAltaFoto(new Date());
+//        foto.setUri("aflknsal");
+//        foto.setFileName("fksña");
+//        foto.setFechaAltaFoto(new Date());
         foto.setActivoFoto(true);
-    
+    foto.setIdFoto("loquequieras");
         fotoRepositorio.save(foto);
     }
     
