@@ -1,4 +1,4 @@
-package theWalkingDogTeam.demo;
+package Final_theWalkingDog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

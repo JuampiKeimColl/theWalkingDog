@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectoFinal_theWalkingDog.entidades;
+package Final_theWalkingDog.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Walker implements Serializable {
-    
+
     @Id
     private String idWalkerDNI;
     private String nombreWalker;
@@ -46,7 +46,15 @@ public class Walker implements Serializable {
     public Walker() {
     }
 
-    public Walker(String idWalkerDNI, String nombreWalker, String apellidoWalker, String correoWalker, String contraseniaWalker, String telefonoWalker, String direccionWalker, String barrioWalker, int manadaWalker, Date fechaAltaWalker, Date fechaModWalker, int totalPaseosWalker, double puntuacionWalker, Comentarios comentraioWalker, int penalizacionWalker, Paseo turnoPaseo, double precioPaseo, Foto fotoWalker, Foto fotoDNIWalker, boolean activoWalker) {
+
+    public Walker(String idWalkerDNI, String nombreWalker, String apellidoWalker,
+            String correoWalker, String contraseniaWalker,
+            String telefonoWalker, String direccionWalker,
+            String barrioWalker, int manadaWalker, Date fechaAltaWalker,
+            Date fechaModWalker, int totalPaseosWalker, double puntuacionWalker,
+            Comentarios comentraioWalker, int penalizacionWalker,
+            Paseo turnoPaseo, Foto fotoWalker, Foto fotoDNIWalker,
+            boolean activoWalker, double precioPaseo) {
         this.idWalkerDNI = idWalkerDNI;
         this.nombreWalker = nombreWalker;
         this.apellidoWalker = apellidoWalker;
@@ -67,9 +75,16 @@ public class Walker implements Serializable {
         this.fotoWalker = fotoWalker;
         this.fotoDNIWalker = fotoDNIWalker;
         this.activoWalker = activoWalker;
+        this.precioPaseo = precioPaseo;
     }
 
+    public double getPrecioPaseo() {
+        return precioPaseo;
+    }
 
+    public void setPrecioPaseo(double precioPaseo) {
+        this.precioPaseo = precioPaseo;
+    }
 
     public String getIdWalkerDNI() {
         return idWalkerDNI;
@@ -222,19 +237,11 @@ public class Walker implements Serializable {
     public void setActivoWalker(boolean activoWalker) {
         this.activoWalker = activoWalker;
     }
+ 
 
     @Override
     public String toString() {
         return "Walker{" + "idWalkerDNI=" + idWalkerDNI + ", nombreWalker=" + nombreWalker + ", apellidoWalker=" + apellidoWalker + ", correoWalker=" + correoWalker + ", contraseniaWalker=" + contraseniaWalker + ", telefonoWalker=" + telefonoWalker + ", direccionWalker=" + direccionWalker + ", barrioWalker=" + barrioWalker + ", manadaWalker=" + manadaWalker + ", fechaAltaWalker=" + fechaAltaWalker + ", fechaModWalker=" + fechaModWalker + ", totalPaseosWalker=" + totalPaseosWalker + ", puntuacionWalker=" + puntuacionWalker + ", comentraioWalker=" + comentraioWalker + ", penalizacionWalker=" + penalizacionWalker + ", turnoPaseo=" + turnoPaseo + ", fotoWalker=" + fotoWalker + ", fotoDNIWalker=" + fotoDNIWalker + ", activoWalker=" + activoWalker + '}';
     }
 
-    public double getPrecioPaseo() {
-        return precioPaseo;
-    }
-
-    public void setPrecioPaseo(double precioPaseo) {
-        this.precioPaseo = precioPaseo;
-    }
-    
-    
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectoFinal_theWalkingDog.entidades;
+package Final_theWalkingDog.entidades;
 // testing merge request (pull request
 
 import java.io.Serializable;

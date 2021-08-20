@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectoFinal_theWalkingDog.repositorio;
+package Final_theWalkingDog.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import proyectoFinal_theWalkingDog.entidades.Usuario;
+import Final_theWalkingDog.entidades.Comentarios;
 
 /**
  *
  * @author JP
  */
 @Repository
-public interface UsuarioRepositorio extends JpaRepository<Usuario,String> {
+public interface ComentariosRepositorio extends JpaRepository<Comentarios, String>{
     
 }
