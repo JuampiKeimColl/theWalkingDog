@@ -13,7 +13,9 @@ public class UsuarioServicios {
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    public void crearUsuario(String nombre, String apellido, String id, String correo, String contrasenia, String telefono, String direccion, String barrio) throws Exception {
+    public void crearUsuario(String nombre, String apellido, String id, 
+            String correo, String contrasenia, String telefono, String direccion, 
+            String barrio) throws Exception {
 
         if (id == null || id.isEmpty()) {
             throw new Exception("No se puede ingresar un DNI nulo");
@@ -84,7 +86,7 @@ public class UsuarioServicios {
 
             usuarioRepositorio.save(usuario1);
         } else {
-            throw new Exception("La editorial no fue encontrada");
+            throw new Exception("El usuario no fue encontrado");
         }
 
     }
