@@ -26,6 +26,9 @@ public class Comentarios implements Serializable {
     private String comentario;
     private int puntuacion;
     private boolean activoComentario;
+    private String idUsuario;
+    private String idWalker;
+    private String idPerro;
 
     public Comentarios() {
     }
@@ -35,6 +38,16 @@ public class Comentarios implements Serializable {
         this.comentario = comentario;
         this.puntuacion = puntuacion;
         this.activoComentario = activoComentario;
+    }
+
+    public Comentarios(String idComentario, String comentario, int puntuacion, boolean activoComentario, String idUsuario, String idWalker, String idPerro) {
+        this.idComentario = idComentario;
+        this.comentario = comentario;
+        this.puntuacion = puntuacion;
+        this.activoComentario = activoComentario;
+        this.idUsuario = idUsuario;
+        this.idWalker = idWalker;
+        this.idPerro = idPerro;
     }
 
     public String getIdComentario() {
@@ -69,10 +82,35 @@ public class Comentarios implements Serializable {
         this.activoComentario = activoComentario;
     }
 
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public String getIdWalker() {
+        return idWalker;
+    }
+
+    public void setIdWalker(String idWalker) {
+        this.idWalker = idWalker;
+    }
+
+    public String getIdPerro() {
+        return idPerro;
+    }
+
+    public void setIdPerro(String idPerro) {
+        this.idPerro = idPerro;
+    }
+
     @Override
     public String toString() {
-        return "Comentarios{" + "idComentario=" + idComentario + ", comentario=" + comentario + ", puntuacion=" + puntuacion + ", activoComentario=" + activoComentario + '}';
+        return "Comentarios{" + "idComentario=" + idComentario + ", comentario=" + comentario + ", puntuacion=" + puntuacion + ", activoComentario=" + activoComentario + ", idUsuario=" + idUsuario + ", idWalker=" + idWalker + ", idPerro=" + idPerro + '}';
     }
+
     
     
    
