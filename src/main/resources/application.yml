@@ -1,5 +1,3 @@
-
-# Configuración Mail Sender
 spring:
   mail: 
     host: smtp.gmail.com
@@ -13,13 +11,11 @@ spring:
                     enable: true
     username: usuario@gmail.com
     password: claveMail
- # Configuración MySQL
   datasource: 
     url: jdbc:mysql://localhost:3306/thewalkingdog?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver 
-# Configuaración Creacion de tablas (Hibernate)
   jpa:
     show-sql: true
     hibernate:
@@ -29,7 +25,6 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect      
   thymeleaf:
     cache: false 
-# Configuración para cambiar la pagina de error 
 server:
   error:
     whitelabel:

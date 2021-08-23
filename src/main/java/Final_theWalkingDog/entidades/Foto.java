@@ -18,8 +18,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Foto implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+//    @GeneratedValue(generator = "uuid")
+//    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idFoto;
     private String uri;
     private String fileName;
