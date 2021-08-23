@@ -80,8 +80,8 @@ public class PerroServicios {
     }
 //Acá tendría q traer el id del perro q busco para hacer la modificación tanto para deshab y hab
 
-    public void deshabilitarPerro(String nombrePerro) throws Exception {
-        Optional<Perro> respuesta = perroRepositorio.findById(nombrePerro);
+    public void deshabilitarPerro(String idPerro) throws Exception {
+        Optional<Perro> respuesta = perroRepositorio.findById(idPerro);
         if (respuesta.isPresent()) {
 
             Perro perro1 = new Perro();

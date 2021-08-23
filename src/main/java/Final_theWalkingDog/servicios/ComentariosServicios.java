@@ -9,6 +9,6 @@ package Final_theWalkingDog.servicios;
  *
  * @author Franco
  */
-public class ComentarioServicios {
+public class ComentariosServicios {
     
 }
