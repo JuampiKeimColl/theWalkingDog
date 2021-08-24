@@ -1,6 +1,7 @@
 
 package Final_theWalkingDog.servicios;
 
+<<<<<<< HEAD
 import Final_theWalkingDog.entidades.Comentarios;
 
 import Final_theWalkingDog.repositorio.ComentariosRepositorio;
@@ -9,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+=======
+
+>>>>>>> fc8dff2a28e7f088c09c4f1a74bb628b047e2dff
 public class ComentariosServicios {
     
    @Autowired

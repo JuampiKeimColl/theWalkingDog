@@ -1,7 +1,9 @@
 package Final_theWalkingDog.servicios;
 
 import Final_theWalkingDog.entidades.Perro;
+import Final_theWalkingDog.entidades.Usuario;
 import Final_theWalkingDog.repositorio.PerroRepositorio;
+import Final_theWalkingDog.repositorio.UsuarioRepositorio;
 import java.util.Date;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,10 @@ public class PerroServicios {
     @Autowired
     private PerroRepositorio perroRepositorio;
 
-    public void crearPerro(String nombrePerro, String razaPerro,
+    @Autowired
+    private UsuarioRepositorio usuarioRepositorio;
+
+    public void crearPerro(String idUsuario, String razaPerro,
             Date nacimientoPerro, String tamanioPerro, boolean bozalPerro,
             String observacionPerro, boolean ddjjPerro) throws Exception {
 
@@ -40,8 +45,10 @@ public class PerroServicios {
 //        if (ddjjPerro == null || ddjjPerro.isEmpty()) {//lo mismo, cómo era el boolean?
 //            throw new Exception("No se puede ingresar una ddjj nula");
 //        }
-
-        perro1.setNombrePerro(nombrePerro);
+        Usuario usuario1 = usuarioRepositorio.findById(idUsuario).get();
+        perro1.setNombrePerro(idUsuario);
+        
+        perro1.setUsuarioPerro(idUsuario);
         perro1.setRazaPerro(razaPerro);
         perro1.setNacimientoPerro(nacimientoPerro);
         perro1.setTamanioPerro(tamanioPerro);
@@ -94,11 +101,11 @@ public class PerroServicios {
 
     public void habilitarPerro(String nombrePerro) throws Exception {
         Optional<Perro> respuesta = perroRepositorio.findById(nombrePerro);
-        if(respuesta.isPresent()){
-            Perro perro1 =new Perro();
+        if (respuesta.isPresent()) {
+            Perro perro1 = new Perro();
             perro1.setActivoPerro(true);
             perro1.setFechaModPerro(null);
-            
+
             perroRepositorio.save(perro1);
         }
     }
