@@ -24,9 +24,9 @@ public class PerroServicios {
 
         Perro perro1 = new Perro();
 
-        if (nombrePerro == null || nombrePerro.isEmpty()) {
-            throw new Exception("No se puede ingresar un nombre nulo");
-        }
+//        if (nombrePerro == null || nombrePerro.isEmpty()) {
+//            throw new Exception("No se puede ingresar un nombre nulo");
+//        }
         if (razaPerro == null || razaPerro.isEmpty()) {
             throw new Exception("No se puede ingresar una raza nula");
         }
@@ -48,7 +48,7 @@ public class PerroServicios {
         Usuario usuario1 = usuarioRepositorio.findById(idUsuario).get();
         perro1.setNombrePerro(idUsuario);
         
-        perro1.setUsuarioPerro(idUsuario);
+//        perro1.setUsuarioPerro(idUsuario);
         perro1.setRazaPerro(razaPerro);
         perro1.setNacimientoPerro(nacimientoPerro);
         perro1.setTamanioPerro(tamanioPerro);

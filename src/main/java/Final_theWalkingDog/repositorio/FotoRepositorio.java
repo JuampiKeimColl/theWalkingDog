@@ -13,7 +13,7 @@ import Final_theWalkingDog.entidades.Foto;
  *
  * @author JP
  */
-@Repository
+@Repository("fotoRepositorio")
 public interface FotoRepositorio extends JpaRepository<Foto,String> {
     
 }
