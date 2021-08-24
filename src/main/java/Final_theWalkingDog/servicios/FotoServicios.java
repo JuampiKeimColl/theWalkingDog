@@ -14,13 +14,13 @@ public class FotoServicios {
 
     public void crearFoto() {
 
-        Foto foto = new Foto("loquequieras");
+        Foto foto = new Foto();
 
-//        foto.setUri("aflknsal");
-//        foto.setFileName("fksña");
-//        foto.setFechaAltaFoto(new Date());
-//        foto.setActivoFoto(true);
-//        foto.setIdFoto("loquequieras");
+        foto.setUri("aflknsal");
+        foto.setFileName("fksña");
+        foto.setFechaAltaFoto(new Date());
+        foto.setActivoFoto(true);
+       
         fotoRepositorio.save(foto);
     }
 
