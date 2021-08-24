@@ -18,8 +18,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Foto implements Serializable {
 
     @Id
-//    @GeneratedValue(generator = "uuid")
-//    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idFoto;
     private String uri;
     private String fileName;
@@ -32,13 +32,13 @@ public class Foto implements Serializable {
     public Foto() {
     }
 
-    public Foto(String idFoto, String uri, String fileName, Date fechaAltaFoto, Date fechaModFoto, boolean activoFoto) {
-        this.idFoto = idFoto;
-        this.uri = uri;
+    public Foto(String fileName) {
+//        this.idFoto = idFoto;
+//        this.uri = uri;
         this.fileName = fileName;
-        this.fechaAltaFoto = fechaAltaFoto;
-        this.fechaModFoto = fechaModFoto;
-        this.activoFoto = activoFoto;
+//        this.fechaAltaFoto = fechaAltaFoto;
+//        this.fechaModFoto = fechaModFoto;
+//        this.activoFoto = activoFoto;
     }
 
     public String getIdFoto() {

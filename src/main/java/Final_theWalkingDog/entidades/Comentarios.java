@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Final_theWalkingDog.entidades;
-// testing merge request (pull request
+
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -12,10 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
-/**
- *
- * @author JP
- */
+
 @Entity
 public class Comentarios implements Serializable {
 
