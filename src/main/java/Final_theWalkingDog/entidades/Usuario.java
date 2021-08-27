@@ -39,25 +39,7 @@ public class Usuario implements Serializable {
     @OneToOne
     private Foto fotoUsuario;
 
-    public Usuario() {
-    }
-
-    public Usuario(String idUsuario, String nombreUsuario, String apellidoUsuario, String correoUsuario, String contraseniaUsuario, String telefonoUsuario, String direccionUsuario, String barrioUsuario, Date fechaAltaUsuario, Date fechaModUsuario, boolean activoUsuario, Perro perro, Foto fotoUsuario) {
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
-        this.apellidoUsuario = apellidoUsuario;
-        this.correoUsuario = correoUsuario;
-        this.contraseniaUsuario = contraseniaUsuario;
-        this.telefonoUsuario = telefonoUsuario;
-        this.direccionUsuario = direccionUsuario;
-        this.barrioUsuario = barrioUsuario;
-        this.fechaAltaUsuario = fechaAltaUsuario;
-        this.fechaModUsuario = fechaModUsuario;
-        this.activoUsuario = activoUsuario;
-        this.perro = perro;
-        this.fotoUsuario = fotoUsuario;
-    }
-
+    
     public String getIdUsuario() {
         return idUsuario;
     }

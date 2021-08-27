@@ -20,16 +20,7 @@ public class Comentarios implements Serializable {
     private int puntuacion;
     private boolean activoComentario;
 
-    public Comentarios() {
-    }
-
-    public Comentarios(String idComentario, String comentario, int puntuacion, boolean activoComentario) {
-        this.idComentario = idComentario;
-        this.comentario = comentario;
-        this.puntuacion = puntuacion;
-        this.activoComentario = activoComentario;
-    }
-
+    
     public String getIdComentario() {
         return idComentario;
     }

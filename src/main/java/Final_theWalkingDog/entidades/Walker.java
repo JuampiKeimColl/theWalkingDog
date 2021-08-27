@@ -43,41 +43,7 @@ public class Walker implements Serializable {
     private Foto fotoDNIWalker;
     private boolean activoWalker;
 
-    public Walker() {
-    }
-
-
-    public Walker(String idWalkerDNI, String nombreWalker, String apellidoWalker,
-            String correoWalker, String contraseniaWalker,
-            String telefonoWalker, String direccionWalker,
-            String barrioWalker, int manadaWalker, Date fechaAltaWalker,
-            Date fechaModWalker, int totalPaseosWalker, double puntuacionWalker,
-            Comentarios comentraioWalker, int penalizacionWalker,
-            Paseo turnoPaseo, Foto fotoWalker, Foto fotoDNIWalker,
-            boolean activoWalker, double precioPaseo) {
-        this.idWalkerDNI = idWalkerDNI;
-        this.nombreWalker = nombreWalker;
-        this.apellidoWalker = apellidoWalker;
-        this.correoWalker = correoWalker;
-        this.contraseniaWalker = contraseniaWalker;
-        this.telefonoWalker = telefonoWalker;
-        this.direccionWalker = direccionWalker;
-        this.barrioWalker = barrioWalker;
-        this.manadaWalker = manadaWalker;
-        this.fechaAltaWalker = fechaAltaWalker;
-        this.fechaModWalker = fechaModWalker;
-        this.totalPaseosWalker = totalPaseosWalker;
-        this.puntuacionWalker = puntuacionWalker;
-        this.comentraioWalker = comentraioWalker;
-        this.penalizacionWalker = penalizacionWalker;
-        this.turnoPaseo = turnoPaseo;
-        this.precioPaseo = precioPaseo;
-        this.fotoWalker = fotoWalker;
-        this.fotoDNIWalker = fotoDNIWalker;
-        this.activoWalker = activoWalker;
-        this.precioPaseo = precioPaseo;
-    }
-
+    
     public double getPrecioPaseo() {
         return precioPaseo;
     }

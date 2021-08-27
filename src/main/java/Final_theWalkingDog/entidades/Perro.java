@@ -40,28 +40,7 @@ public class Perro implements Serializable {
     private Comentarios comentarioPerro;
     private double puntuacionPerro;
 
-    public Perro() {
-    }
-
-    public Perro(String idPerro, String nombrePerro, Foto fotoPerro, String razaPerro, Date nacimientoPerro, String tamanioPerro, boolean bozalPerro, String observacionPerro, boolean ddjjPerro, Date fechaAltaPerro, Date fechaModPerro, Paseo paseoPerro, Usuario usuarioPerro, boolean activoPerro, Comentarios comentarioPerro, double puntuacionPerro) {
-        this.idPerro = idPerro;
-        this.nombrePerro = nombrePerro;
-        this.fotoPerro = fotoPerro;
-        this.razaPerro = razaPerro;
-        this.nacimientoPerro = nacimientoPerro;
-        this.tamanioPerro = tamanioPerro;
-        this.bozalPerro = bozalPerro;
-        this.observacionPerro = observacionPerro;
-        this.ddjjPerro = ddjjPerro;
-        this.fechaAltaPerro = fechaAltaPerro;
-        this.fechaModPerro = fechaModPerro;
-        this.paseoPerro = paseoPerro;
-        this.usuarioPerro = usuarioPerro;
-        this.activoPerro = activoPerro;
-        this.comentarioPerro = comentarioPerro;
-        this.puntuacionPerro = puntuacionPerro;
-    }
-
+    
     public String getIdPerro() {
         return idPerro;
     }

@@ -28,20 +28,7 @@ public class Paseo implements Serializable {
     @ManyToOne
     private Walker walker;
 
-    public Paseo() {
-    }
-
-    public Paseo(String idPaseo, Date horaInicioPaseo, Date horaFinPaseo, boolean conformidadPaseo, Perro perro, Walker walker) {
-        this.idPaseo = idPaseo;
-        this.horaInicioPaseo = horaInicioPaseo;
-        this.horaFinPaseo = horaFinPaseo;
-
-        this.conformidadPaseo = conformidadPaseo;
-
-        this.perro = perro;
-        this.walker = walker;
-    }
-
+    
     public String getIdPaseo() {
         return idPaseo;
     }
