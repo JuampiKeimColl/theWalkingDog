@@ -1,11 +1,13 @@
 package Final_theWalkingDog.servicios;
 
+import Final_theWalkingDog.entidades.Foto;
 import Final_theWalkingDog.entidades.Walker;
 import Final_theWalkingDog.repositorio.WalkerRepositorio;
 import java.util.Date;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class WalkerServicios {
@@ -13,7 +15,12 @@ public class WalkerServicios {
     @Autowired
     private WalkerRepositorio walkerRepositorio;
 
-    public void crearWalker(String IdWalkerDNI, String nombreWalker, String apellidoWalker, String correoWalker, String contraseniaWalker, String telefonoWalker, String direccionWalker, String barrioWalker, int manadaWalker, int precioPaseo) throws Exception {
+    @Autowired
+    private FotoServicios fotoServicios;
+
+    public void crearWalker(MultipartFile archivo1, MultipartFile archivo2, String IdWalkerDNI, String nombreWalker, String apellidoWalker, String correoWalker,
+            String contraseniaWalker, String telefonoWalker, String direccionWalker, String barrioWalker,
+            int manadaWalker, int precioPaseo) throws Exception {
 
         if (IdWalkerDNI == null || IdWalkerDNI.isEmpty()) {
             throw new Exception("No se puede ingresar un DNI nulo");
@@ -56,15 +63,20 @@ public class WalkerServicios {
         walker.setFechaModWalker(hoy);
         walker.setPenalizacionWalker(10);
         walker.setPrecioPaseo(precioPaseo);
-//        walker.setFotoWalker(fotoWalker);
-//        walker.setFotoDNIWalker(FotoDNIWalker);
         walker.setActivoWalker(true);
+
+        Foto foto = fotoServicios.crearFoto(archivo1);
+        walker.setFotoDNIWalker(foto);
+        Foto foto1 = fotoServicios.crearFoto(archivo2);
+        walker.setFotoWalker(foto1);
 
         walkerRepositorio.save(walker);
 
     }
 
-    public void modificarWalker(String id, String contrasenia, String direccion, String barrio, String telefono, int manadaWalker, double precioPaseo) throws Exception {
+    public void modificarWalker(MultipartFile archivo, String id, String contrasenia, String direccion, String barrio,
+            String telefono, int manadaWalker, double precioPaseo) throws Exception {
+
         if (id == null || id.isEmpty()) {
             throw new Exception("No se puede ingresar un DNI nulo");
         }
@@ -98,6 +110,16 @@ public class WalkerServicios {
             walker.setManadaWalker(manadaWalker);
             walker.setPrecioPaseo(precioPaseo);
 
+            String idFoto = null;
+
+            if (walker.getFotoWalker() != null) {
+                idFoto = walker.getFotoWalker().getIdFoto();
+            }
+                Foto foto = fotoServicios.modificarFoto(idFoto, archivo);
+                walker.setFotoWalker(foto);
+            
+            
+
             walkerRepositorio.save(walker);
         } else {
             throw new Exception("El Walker no fue encontrado");
@@ -121,7 +143,7 @@ public class WalkerServicios {
         } else {
             throw new Exception("El Walker no fue encontrado");
         }
-        
+
     }
 
     public void habilitarWalker(String id, String contrasenia) throws Exception {
@@ -142,5 +164,3 @@ public class WalkerServicios {
         }
     }
 }
-
-

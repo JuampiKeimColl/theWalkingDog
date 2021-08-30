@@ -7,9 +7,12 @@ package Final_theWalkingDog.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
@@ -21,25 +24,17 @@ public class Foto implements Serializable {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idFoto;
-    private String uri;
     private String fileName;
+    private String uri;
+    
+    @Lob @Basic(fetch=FetchType.LAZY)
+    private byte[] contenido;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAltaFoto;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaModFoto;
     private boolean activoFoto;
-
-    public Foto() {
-    }
-
-    public Foto(String fileName) {
-//        this.idFoto = idFoto;
-//        this.uri = uri;
-        this.fileName = fileName;
-//        this.fechaAltaFoto = fechaAltaFoto;
-//        this.fechaModFoto = fechaModFoto;
-//        this.activoFoto = activoFoto;
-    }
 
     public String getIdFoto() {
         return idFoto;
@@ -88,10 +83,25 @@ public class Foto implements Serializable {
     public void setActivoFoto(boolean activoFoto) {
         this.activoFoto = activoFoto;
     }
+    
+    /**
+     * @return the contenido
+     */
+    public byte[] getContenido() {
+        return contenido;
+    }
+
+    /**
+     * @param contenido the contenido to set
+     */
+    public void setContenido(byte[] contenido) {
+        this.contenido = contenido;
+    }
 
     @Override
     public String toString() {
-        return "Foto{" + "idFoto=" + idFoto + ", uri=" + uri + ", fileName=" + fileName + ", fechaAltaFoto=" + fechaAltaFoto + ", fechaModFoto=" + fechaModFoto + ", activoFoto=" + activoFoto + '}';
+        return "Foto{" + "idFoto=" + getIdFoto() + ", uri=" + getUri() + ", fileName=" + getFileName() + ", fechaAltaFoto=" + getFechaAltaFoto() + ", fechaModFoto=" + getFechaModFoto() + ", activoFoto=" + isActivoFoto() + '}';
     }
+
 
 }
