@@ -8,29 +8,14 @@
     }
 
     .header img{
-      display: flex;
-    width: 180px;
-    height: 180px;
-    align-items: center;
-    justify-content: center;
-    border: 7px solid #377D7A;
-    background-color: #DFE5F2;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    position: absolute;
-    bottom: 250px;
-    left: calc(50% - 90px);
-    z-index: 1;
-    }
-    .user-description{
-      list-style: none;
-      margin-top: -180px;
-      text-align: center;
-      padding: 0;
-    }
-
-    .user-description .user-name h1{
-      font-size: 18px;
+    border-style: solid;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 500px;
     }
 
     .user-description .user-info table{
