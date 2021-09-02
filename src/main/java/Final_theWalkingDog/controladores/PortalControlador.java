@@ -13,4 +13,13 @@ public class PortalControlador {
     public String index(){
         return "index.html";
     }
+//    @GetMapping("")
+//    public String index(){
+//        return "index.html";
+//    }
+//    @GetMapping("/")
+//    public String index(){
+//        return "index.html";
+//    }
+    
 }
