@@ -13,43 +13,43 @@ public class PortalControlador {
     public String index(){
         return "index.html";
     }
-     @GetMapping("/")
+     @GetMapping("/contacto")
     public String contacto(){
         return "contacto.html";
     }
-    @GetMapping("/")
+    @GetMapping("/inicosesionusuario")
     public String iniciosesionusuario(){
         return "iniciosesionusuario.html";
     }
-     @GetMapping("/")
+     @GetMapping("/inisiosesionwalker")
     public String inisiosesionwalker(){
         return "inisiosesionwalker.html";
     }
-    @GetMapping("/")
+    @GetMapping("/otros")
     public String otros(){
         return "otros.html";
     }
-     @GetMapping("/")
+     @GetMapping("/perfilusuario")
     public String perfilusuario(){
         return "perfilusuario.html";
     }
-    @GetMapping("/")
+    @GetMapping("/perfilwalker")
     public String perfilwalker(){
         return "perfilwalker.html";
     }
-    @GetMapping("/")
+    @GetMapping("/rutaspaseo")
     public String rutaspaseo(){
         return "perfilwalker.html";
     }
-     @GetMapping("/")
+     @GetMapping("/usuario")
     public String usuario(){
         return "usuario.html";
     }
-     @GetMapping("/")
+     @GetMapping("/videosinteres")
     public String videosinteres(){
         return "videosinteres.html";
     }
-     @GetMapping("/")
+     @GetMapping("/walker")
     public String walker(){
         return "walker.html";
     }
