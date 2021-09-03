@@ -32,13 +32,16 @@
           
             <div id="signupbox" style="margin-top:50px; margin-left: 280px; margin-top: 50px; width: 50%;
             justify-content: center">
-                <form id="signupform" class="form-horizontal" role="form">
-                            
+                <!-- <form id="signupform" class="form-horizontal" role="form"> -->
+            <!-- <form th:action="@{/logincheck}" method="POST">       -->
+            <form action="perfilusuario.html" method="GET">     
                 <div class="login">
                     <input type="text" placeholder="Nombre Usuario" id="username">  
                   <input type="password" placeholder="Contrasena" id="password">  
                   <a href="#" class="forgot">Olvidaste la Contrasena?</a>
-                  <input type="submit" value="Entrar">
+                  <!-- <input type="submit"" value="Entrar" > -->
+                  <button  type = "submit" class = " btn btn-primary " > Entrar </button>
+                                    
                 </div>
                 <div class="shadow"></div>
                      
