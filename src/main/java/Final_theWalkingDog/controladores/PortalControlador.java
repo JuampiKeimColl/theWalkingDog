@@ -65,7 +65,7 @@ public class PortalControlador {
         return "walker.html";
     }
 
-    @PostMapping("/registrarse")
+      @PostMapping("/registrarse")
     public String registroUsuario(@RequestParam String email,
             @RequestParam String nombre, @RequestParam String apellido,
             @RequestParam String dni, @RequestParam String contrasenia1,
