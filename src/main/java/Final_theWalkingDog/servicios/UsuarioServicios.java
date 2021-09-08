@@ -32,15 +32,15 @@ public class UsuarioServicios {
         if (contrasenia == null || contrasenia.isEmpty() || contrasenia.length() < 6) {
             throw new Exception("No se puede ingresar un contraseña nula o menor a seis digitos");
         }
-//        if (telefono == null || telefono.isEmpty()) {
-//            throw new Exception("No se puede ingresar un teléfono nulo");
-//        }
-//        if (direccion == null || direccion.isEmpty()) {
-//            throw new Exception("No se puede ingresar un dirección nulo");
-//        }
-//        if (barrio == null || barrio.isEmpty()) {
-//            throw new Exception("No se puede ingresar un barrio nulo");
-//        }
+        if (telefono == null || telefono.isEmpty()) {
+            throw new Exception("No se puede ingresar un teléfono nulo");
+        }
+        if (direccion == null || direccion.isEmpty()) {
+            throw new Exception("No se puede ingresar un dirección nulo");
+        }
+        if (barrio == null || barrio.isEmpty()) {
+            throw new Exception("No se puede ingresar un barrio nulo");
+        }
 
         Usuario usuario1 = new Usuario();
         usuario1.setNombreUsuario(nombre);

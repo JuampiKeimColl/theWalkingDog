@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml"
->
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -37,13 +35,13 @@
     <div class="container">
 
 
-        
+
         <div id="signupbox" style="margin-top:50px; margin-left: 280px; margin-top: 50px; width: 50%;
                  justify-content: center;">
 
 
 
-            
+
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title">Registro de
@@ -51,25 +49,18 @@
                     <div style="float:right; font-size: 85%; position: relative; top:-20px"><a
                             href="/iniciosesionusuario">Inicio Sesion Usuario</a></div>
                 </div>
-
                 <div class="panel-body">
 
                     <form action="/registrarse" method="POST" id="signupform" class="form-horizontal" role="form">
-                        <!-- <p th:if="$(error != null)" th:text="$(error)"></p> -->
 
                         <div align="center">
-                            
+
                             <img class="img-circle"
                                 src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=90">
-                               
-                            </div>
-                            <p th:if="$(error != null)" th:text="$(error)"></p>
+                        </div>
+
                         <br>
-
                         <div class="form-group">
-
-                           
-                            
                             <label for="email" class="col-md-3 control-label">Email</label>
                             <div class="col-md-9">
                                 <input type="email" class="form-control" name="email" placeholder="Email">
@@ -120,33 +111,33 @@
 
                     </form>
                     <!-- <div class="col-lg-6 order-lg-l">
-                            <div class="p-5">
-                                <h2 class="display-4">Registrate</h2>
-                                <form action="/registroUsuario">
-    
-                                    <label>Email</label>
-                                    <input type="email" class="form-control" name="email" >
-    
-                                    <label>Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" >
-    
-                                    <label>Apellido</label>
-                                    <input type="text" class="form-control" name="apellido" >
-    
-                                    <label>DNI</label>
-                                    <input type="text" class="form-control" name="dni" >
-    
-                                    <label>Clave</label>
-                                    <input type="password" class="form-control" name="contrasenia1" >
-    
-                                    <label>Repita clave</label>
-                                    <input type="password" class="form-control" name="contrasenia2" >
-                        
-                                    
-                                    <button type="submit" class="btn btn-primary pull-right"> Registrarse</button>
-                                </form>
-                            </div>
-                        </div> -->
+                        <div class="p-5">
+                            <h2 class="display-4">Registrate</h2>
+                            <form action="/registroUsuario">
+
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" >
+
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" name="nombre" >
+
+                                <label>Apellido</label>
+                                <input type="text" class="form-control" name="apellido" >
+
+                                <label>DNI</label>
+                                <input type="text" class="form-control" name="dni" >
+
+                                <label>Clave</label>
+                                <input type="password" class="form-control" name="contrasenia1" >
+
+                                <label>Repita clave</label>
+                                <input type="password" class="form-control" name="contrasenia2" >
+                    
+                                
+                                <button type="submit" class="btn btn-primary pull-right"> Registrarse</button>
+                            </form>
+                        </div>
+                    </div> -->
 
 
 
