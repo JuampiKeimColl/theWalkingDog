@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+>
 
 <head>
     <meta charset="UTF-8">
@@ -52,7 +54,7 @@
                 <div class="panel-body">
 
                     <form action="/registrarse" method="POST" id="signupform" class="form-horizontal" role="form">
-
+<!-- <p th:if="$(error != null)" th:text="$(error)"></p> -->
                         <div align="center">
 
                             <img class="img-circle"
