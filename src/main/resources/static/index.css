@@ -1,3 +1,14 @@
+.d-flex img{
+  width: 30%;
+  margin-top: 20px;
+}
+
+.d-flex p{
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #377D7A;
+  color: rgb(0, 0, 0);
+}
 .row1 {
     overflow: hidden;
     position: relative;
@@ -267,11 +278,11 @@
     
   }
   #nave{
-    with:100%;
+    witdh:100%;
     height:500px;
     background:url(https://www.diariamenteali.com/medias/beneficios-de-sacar-a-pasear-a-tu-perro-1900Wx500H?context=bWFzdGVyfGltYWdlc3w5OTU4NnxpbWFnZS9qcGVnfGhjYy9oZjkvOTA3NDUzODkzODM5OC9iZW5lZmljaW9zLWRlLXNhY2FyLWEtcGFzZWFyLWEtdHUtcGVycm9fMTkwMFd4NTAwSHwwZDQ0MWUzMTY4MDFlMzFhZGU2MDQwNjE5OGRjNmU4NWZkZjNhOTU4YTkyYTYwNDBmYTZlN2IyMjYwMzYxZWE5);
     background-size: cover;
-    opacity: 0.8;
+    opacity: 1;
       
   }
 

@@ -2,8 +2,7 @@
     @import 'https://fonts.googleapis.com/css?family=Raleway';
     
     .header{
-      height: 300px;
-      padding: 30px;
+      padding: 25px 75px 25px 25px;
       
     }
 
@@ -12,7 +11,7 @@
     height: 180px;
     border-radius: 50%;
     border-style: solid;
-    margin-left: auto;
+    margin-left: 500px;
     margin-right: auto;
     }
 
