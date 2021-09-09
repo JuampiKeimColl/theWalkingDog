@@ -1,6 +1,7 @@
 package Final_theWalkingDog.controladores;
 
 import Final_theWalkingDog.servicios.UsuarioServicios;
+import Final_theWalkingDog.servicios.WalkerServicios;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class PortalControlador {
 
     @Autowired
     private UsuarioServicios usuarioServicio;
+    @Autowired
+    private WalkerServicios walkerServicio;
 
     @GetMapping()
     public String index() {
@@ -94,5 +97,25 @@ public class PortalControlador {
 //        System.out.println("Clave2: " + contrasenia2);
         return "index.html";
     }
+ @PostMapping("/registrarseW")
+    public String registroWalker(ModelMap modelo, @RequestParam String email,
+            @RequestParam String nombre, @RequestParam String apellido,
+            @RequestParam String dni, @RequestParam String contrasenia1,
+            @RequestParam String contrasenia2) {
 
+        try {
+            usuarioServicio.crearUsuario(nombre, apellido, dni, email, contrasenia1, null,null,null);
+        } catch (Exception ex) {
+            modelo.put("error",ex.getMessage());
+            return "usuario.html";
+        }
+
+//        System.out.println("Email: " + email);
+//        System.out.println("Nombre: " + nombre);
+//        System.out.println("Apellido: " + apellido);
+//        System.out.println("Dni: " + dni);
+//        System.out.println("Clave1: " + contrasenia1);
+//        System.out.println("Clave2: " + contrasenia2);
+        return "index.html";
+    }
 }
