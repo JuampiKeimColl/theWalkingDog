@@ -98,8 +98,9 @@ public class PortalControlador {
             modelo.put("contrasenia2", contrasenia1);
             return "usuario.html";
         }
-
-        return "index.html";
+        modelo.put("titulo","¡Bienvenido a The walking dog!");
+        modelo.put("descripcion","Tu usuario ha sido registrado de manera satifactoria");
+        return "exito.html";
     }
     
  @PostMapping("/registrarseW")
@@ -121,8 +122,9 @@ public class PortalControlador {
             modelo.put("contrasenia2", contrasenia1);
             return "walker.html";
         }
-
-        return "index.html";
+        modelo.put("titulo","¡Bienvenido a The walking dog!");
+        modelo.put("descripcion","Tu usuario ha sido registrado de manera satifactoria");
+        return "exito.html";
     }
     
 //    @PostMapping("/agregarPerro")
