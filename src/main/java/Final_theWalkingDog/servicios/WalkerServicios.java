@@ -18,7 +18,7 @@ public class WalkerServicios {
     @Autowired
     private FotoServicios fotoServicios;
 
-    public void crearWalker(MultipartFile archivo1, MultipartFile archivo2, String IdWalkerDNI, String nombreWalker, String apellidoWalker, String correoWalker,
+    public void crearWalker(String IdWalkerDNI, String nombreWalker, String apellidoWalker, String correoWalker,
             String contraseniaWalker, String telefonoWalker, String direccionWalker, String barrioWalker,
             int manadaWalker, int precioPaseo) throws Exception {
 
@@ -37,15 +37,15 @@ public class WalkerServicios {
         if (contraseniaWalker == null || contraseniaWalker.isEmpty() || contraseniaWalker.length() < 6) {
             throw new Exception("No se puede ingresar un contraseña nula o menor a seis digitos");
         }
-        if (telefonoWalker == null || telefonoWalker.isEmpty()) {
-            throw new Exception("No se puede ingresar un teléfono nulo");
-        }
-        if (direccionWalker == null || direccionWalker.isEmpty()) {
-            throw new Exception("No se puede ingresar un dirección nulo");
-        }
-        if (barrioWalker == null || barrioWalker.isEmpty()) {
-            throw new Exception("No se puede ingresar un barrio nulo");
-        }
+//        if (telefonoWalker == null || telefonoWalker.isEmpty()) {
+//            throw new Exception("No se puede ingresar un teléfono nulo");
+//        }
+//        if (direccionWalker == null || direccionWalker.isEmpty()) {
+//            throw new Exception("No se puede ingresar un dirección nulo");
+//        }
+//        if (barrioWalker == null || barrioWalker.isEmpty()) {
+//            throw new Exception("No se puede ingresar un barrio nulo");
+//        }
 
         Walker walker = new Walker();
 
@@ -65,10 +65,10 @@ public class WalkerServicios {
         walker.setPrecioPaseo(precioPaseo);
         walker.setActivoWalker(true);
 
-        Foto foto = fotoServicios.crearFoto(archivo1);
-        walker.setFotoDNIWalker(foto);
-        Foto foto1 = fotoServicios.crearFoto(archivo2);
-        walker.setFotoWalker(foto1);
+//        Foto foto = fotoServicios.crearFoto(archivo1);
+//        walker.setFotoDNIWalker(foto);
+//        Foto foto1 = fotoServicios.crearFoto(archivo2);
+//        walker.setFotoWalker(foto1);
 
         walkerRepositorio.save(walker);
 

@@ -89,14 +89,9 @@ public class PortalControlador {
             return "usuario.html";
         }
 
-//        System.out.println("Email: " + email);
-//        System.out.println("Nombre: " + nombre);
-//        System.out.println("Apellido: " + apellido);
-//        System.out.println("Dni: " + dni);
-//        System.out.println("Clave1: " + contrasenia1);
-//        System.out.println("Clave2: " + contrasenia2);
         return "index.html";
     }
+    
  @PostMapping("/registrarseW")
     public String registroWalker(ModelMap modelo, @RequestParam String email,
             @RequestParam String nombre, @RequestParam String apellido,
@@ -104,18 +99,13 @@ public class PortalControlador {
             @RequestParam String contrasenia2) {
 
         try {
-            usuarioServicio.crearUsuario(nombre, apellido, dni, email, contrasenia1, null,null,null);
+            walkerServicio.crearWalker(dni, nombre, apellido, email, contrasenia1, null, null, null, 0, 0);
+         
         } catch (Exception ex) {
             modelo.put("error",ex.getMessage());
             return "usuario.html";
         }
 
-//        System.out.println("Email: " + email);
-//        System.out.println("Nombre: " + nombre);
-//        System.out.println("Apellido: " + apellido);
-//        System.out.println("Dni: " + dni);
-//        System.out.println("Clave1: " + contrasenia1);
-//        System.out.println("Clave2: " + contrasenia2);
         return "index.html";
     }
 }

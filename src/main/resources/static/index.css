@@ -285,12 +285,15 @@
     background:url(https://www.diariamenteali.com/medias/beneficios-de-sacar-a-pasear-a-tu-perro-1900Wx500H?context=bWFzdGVyfGltYWdlc3w5OTU4NnxpbWFnZS9qcGVnfGhjYy9oZjkvOTA3NDUzODkzODM5OC9iZW5lZmljaW9zLWRlLXNhY2FyLWEtcGFzZWFyLWEtdHUtcGVycm9fMTkwMFd4NTAwSHwwZDQ0MWUzMTY4MDFlMzFhZGU2MDQwNjE5OGRjNmU4NWZkZjNhOTU4YTkyYTYwNDBmYTZlN2IyMjYwMzYxZWE5);
     background-size: cover;
     opacity: 1;
+   
       
   }
 
   #nave #titulo {
   width:20%;
 padding-left: 50px;
+
+
 
   }
   #nave #silueta {
