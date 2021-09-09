@@ -18,8 +18,8 @@ public class PerroServicios {
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    public void crearPerro(String idUsuario, String razaPerro,
-            Date nacimientoPerro, String tamanioPerro, boolean bozalPerro,
+    public void crearPerro(String idUsuario,String nombrePerro, String razaPerro,
+             String tamanioPerro, boolean bozalPerro,
             String observacionPerro, boolean ddjjPerro) throws Exception {
 
         Perro perro1 = new Perro();
@@ -48,9 +48,10 @@ public class PerroServicios {
         Usuario usuario1 = usuarioRepositorio.findById(idUsuario).get();
         perro1.setNombrePerro(idUsuario);
         
+        perro1.setNombrePerro(nombrePerro);
 //        perro1.setUsuarioPerro(idUsuario);
         perro1.setRazaPerro(razaPerro);
-        perro1.setNacimientoPerro(nacimientoPerro);
+//        perro1.setNacimientoPerro(nacimientoPerro);
         perro1.setTamanioPerro(tamanioPerro);
         perro1.setBozalPerro(bozalPerro);
         perro1.setObservacionPerro(observacionPerro);

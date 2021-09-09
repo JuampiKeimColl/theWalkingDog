@@ -46,7 +46,7 @@
                 </div>
                 <div class="panel-body">
                     <form action="/registrarseW" method="POST" id="signupform" class="form-horizontal" role="form">
-                        <p th:if="${error != null}" th:text="${error}"></p> 
+                        <p th:if="${error != null}" th:text="${error}" style="color: red"></p> 
                         <div style="align-items:center">
 
                             <img class="img-circle"
@@ -57,40 +57,40 @@
                         <div class="form-group">
                             <label for="email" class="col-md-3 control-label">Email</label>
                             <div class="col-md-9">
-                                <input type="email" class="form-control" name="email" placeholder="Email">
+                                <input type="email" class="form-control" name="email" th:value="${email}" placeholder="Email" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="firstname" class="col-md-3 control-label">Nombre</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                                <input type="text" class="form-control" name="nombre" th:value="${nombre}" placeholder="Nombre" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label">Apellido</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                                <input type="text" class="form-control" name="apellido" th:value="${apellido}" placeholder="Apellido" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label">Dni</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="dni" placeholder="Dni">
+                                <input type="text" class="form-control" name="dni" th:value="${dni}" placeholder="Dni" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">Clave</label>
                             <div class="col-md-9">
-                                <input type="password" class="form-control" name="contrasenia1"
-                                    placeholder="Contraseña">
+                                <input type="password" class="form-control" name="contrasenia1" th:value="${contrasenia1}"
+                                    placeholder="Contraseña" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">Repetir Clave</label>
                             <div class="col-md-9">
-                                <input type="password" class="form-control" name="contrasenia2"
-                                    placeholder="Contraseña">
+                                <input type="password" class="form-control" name="contrasenia2" th:value="${contrasenia2}"
+                                    placeholder="Contraseña" >
                             </div>
                         </div>
 

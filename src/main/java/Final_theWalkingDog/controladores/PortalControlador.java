@@ -1,5 +1,7 @@
 package Final_theWalkingDog.controladores;
 
+import Final_theWalkingDog.repositorio.PerroRepositorio;
+import Final_theWalkingDog.servicios.PerroServicios;
 import Final_theWalkingDog.servicios.UsuarioServicios;
 import Final_theWalkingDog.servicios.WalkerServicios;
 import java.util.logging.Level;
@@ -20,6 +22,8 @@ public class PortalControlador {
     private UsuarioServicios usuarioServicio;
     @Autowired
     private WalkerServicios walkerServicio;
+    @Autowired
+    private PerroServicios perroServicio;
 
     @GetMapping()
     public String index() {
@@ -31,14 +35,14 @@ public class PortalControlador {
         return "contacto.html";
     }
 
-    @GetMapping("/inicosesionusuario")
+    @GetMapping("/iniciosesionusuario")
     public String iniciosesionusuario() {
         return "iniciosesionusuario.html";
     }
 
-    @GetMapping("/inisiosesionwalker")
-    public String inisiosesionwalker() {
-        return "inisiosesionwalker.html";
+    @GetMapping("/iniciosesionwalker")
+    public String iniciosesionwalker() {
+        return "iniciosesionwalker.html";
     }
 
     @GetMapping("/otros")
@@ -86,6 +90,12 @@ public class PortalControlador {
             usuarioServicio.crearUsuario(nombre, apellido, dni, email, contrasenia1, null,null,null);
         } catch (Exception ex) {
             modelo.put("error",ex.getMessage());
+            modelo.put("nombre", nombre);
+            modelo.put("apellido", apellido);
+            modelo.put("dni", dni);
+            modelo.put("email", email);
+            modelo.put("contrasenia1", contrasenia1);
+            modelo.put("contrasenia2", contrasenia1);
             return "usuario.html";
         }
 
@@ -103,9 +113,32 @@ public class PortalControlador {
          
         } catch (Exception ex) {
             modelo.put("error",ex.getMessage());
-            return "usuario.html";
+            modelo.put("nombre", nombre);
+            modelo.put("apellido", apellido);
+            modelo.put("dni", dni);
+            modelo.put("email", email);
+            modelo.put("contrasenia1", contrasenia1);
+            modelo.put("contrasenia2", contrasenia1);
+            return "walker.html";
         }
 
         return "index.html";
     }
+    
+//    @PostMapping("/agregarPerro")
+//    public String agregarPerro(ModelMap modelo, @RequestParam String idUsuario,@RequestParam String nombrePerro, @RequestParam String razaPerro,
+//              @RequestParam String tamanioPerro, @RequestParam String observacionPerro){
+//        
+//        try {
+//           Optional<PerroRepositorio>
+//            perroServicio.crearPerro(idUsuario,nombrePerro, razaPerro, tamanioPerro, true, observacionPerro, true);
+//         
+//        } catch (Exception ex) {
+//            modelo.put("error",ex.getMessage());
+//            return "usuario.html";
+//        }
+//
+//        return "index.html";
+//        
+//    }
 }
