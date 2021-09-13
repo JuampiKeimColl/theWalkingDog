@@ -1,49 +1,49 @@
-package Final_theWalkingDog;
+//package Final_theWalkingDog;
+//
+//import Final_theWalkingDog.servicios.UsuarioServicios;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+//import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//
+//@Configuration
+//@EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
+//
+//public class SeguridadConfiguracion extends WebSecurityConfigurerAdapter {
+//
+//    @Autowired
+//    public UsuarioServicios usuarioServicio;
 
-import Final_theWalkingDog.servicios.UsuarioServicios;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//    @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//        auth
+//                .userDetailsService(usuarioServicio)
+//                .passwordEncoder(new BCryptPasswordEncoder());
+//    }
+//    
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception{
+//        http.headers().frameOptions().sameOrigin().and()
+//                .authorizeRequests()
+//                            .antMatchers("/css/*","/js/*","/img/*")
+//                            .permitAll()
+//                .and().formLogin()
+//                             .loginPage("/iniciosesionusuario")
+//                                        .loginProcessingUrl("/logincheck")//y esto?
+//                                        .usernameParameter("username")
+//                                        .passwordParameter("password")
+//                                        .defaultSuccessUrl("/perfilusuario")
+//                                        .permitAll()
+//                             .and().logout()
+//                             .logoutUrl("/loguot")
+//                            .logoutSuccessUrl("/")
+//                            .permitAll();
+//
+//    }
 
-@Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-
-public class SeguridadConfiguracion extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    public UsuarioServicios usuarioServicio;
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(usuarioServicio)
-                .passwordEncoder(new BCryptPasswordEncoder());
-    }
-    
-    @Override
-    protected void configure(HttpSecurity http) throws Exception{
-        http.headers().frameOptions().sameOrigin().and()
-                .authorizeRequests()
-                            .antMatchers("/css/*","/js/*","/img/*")
-                            .permitAll()
-                .and().formLogin()
-                             .loginPage("/iniciosesionusuario")
-                                        .loginProcessingUrl("/logincheck")//y esto?
-                                        .usernameParameter("username")
-                                        .passwordParameter("password")
-                                        .defaultSuccessUrl("/perfilusuario")
-                                        .permitAll()
-                             .and().logout()
-                             .logoutUrl("/loguot")
-                            .logoutSuccessUrl("/")
-                            .permitAll();
-
-    }
-
-}
+//}
