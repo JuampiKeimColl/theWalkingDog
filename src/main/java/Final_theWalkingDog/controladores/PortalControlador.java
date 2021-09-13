@@ -127,6 +127,30 @@ public class PortalControlador {
         return "exito.html";
     }
     
+    @PostMapping("/crearPerro")
+    public String registroPerro(ModelMap modelo,@RequestParam String idUsuario, 
+            @RequestParam String nombrePerro, @RequestParam String razaPerro,
+            @RequestParam String tamanioPerro,
+           String observacionPerro) {
+
+        try {
+            perroServicio.crearPerro( idUsuario,  nombrePerro,  razaPerro,
+             tamanioPerro,
+             observacionPerro);
+        } catch (Exception ex) {
+            modelo.put("error",ex.getMessage());
+            modelo.put("nombre", nombrePerro);
+            modelo.put("raza", razaPerro);
+            modelo.put("tamanio", tamanioPerro);
+            modelo.put("observaciones", observacionPerro);
+           
+            return "usuario.html";
+        }
+        modelo.put("titulo","¡Bienvenido a The walking dog!");
+        modelo.put("descripcion","Tu perro ha sido registrado de manera satifactoria");
+        return "exito.html";
+    }
+    
 //    @PostMapping("/agregarPerro")
 //    public String agregarPerro(ModelMap modelo, @RequestParam String idUsuario,@RequestParam String nombrePerro, @RequestParam String razaPerro,
 //              @RequestParam String tamanioPerro, @RequestParam String observacionPerro){

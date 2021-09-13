@@ -18,96 +18,117 @@ public class PerroServicios {
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    public void crearPerro(String idUsuario,String nombrePerro, String razaPerro,
-             String tamanioPerro, boolean bozalPerro,
-            String observacionPerro, boolean ddjjPerro) throws Exception {
+    public void crearPerro(String idUsuario, String nombrePerro, String razaPerro,
+            String tamanioPerro,
+            String observacionPerro) throws Exception {
 
-        Perro perro1 = new Perro();
+        Usuario usuario = usuarioRepositorio.findById(idUsuario).get();
 
-//        if (nombrePerro == null || nombrePerro.isEmpty()) {
-//            throw new Exception("No se puede ingresar un nombre nulo");
-//        }
-        if (razaPerro == null || razaPerro.isEmpty()) {
-            throw new Exception("No se puede ingresar una raza nula");
-        }
-//        if (nacimientoPerro == null || nacimientoPerro.isEmpty()) {//la condición del Date?
-//            throw new Exception("No se puede ingresar un nacimiento nulo");
-//        }
-        if (tamanioPerro == null || tamanioPerro.isEmpty()) {
-            throw new Exception("No se puede ingresar un tamaño nulo");
-        }
-//        if (bozalPerro == null || bozalPerro.isEmpty()) {//como era la condición booleana?
-//            throw new Exception("No se puede seguir sin indicar el uso de bozal");
-//        }
+        validar(nombrePerro, razaPerro, tamanioPerro);
         if (observacionPerro == null || observacionPerro.isEmpty()) {
             throw new Exception("Ingrese una mínima descripción de su mascota para facilitar la selección del Walker");
         }
+        Perro perro1 = new Perro();
+
+//        if (nacimientoPerro == null || nacimientoPerro.isEmpty()) {//la condición del Date?
+//            throw new Exception("No se puede ingresar un nacimiento nulo");
+//        }
+//        if (bozalPerro == null || bozalPerro.isEmpty()) {//como era la condición booleana?
+//            throw new Exception("No se puede seguir sin indicar el uso de bozal");
+//        }
 //        if (ddjjPerro == null || ddjjPerro.isEmpty()) {//lo mismo, cómo era el boolean?
 //            throw new Exception("No se puede ingresar una ddjj nula");
 //        }
-        Usuario usuario1 = usuarioRepositorio.findById(idUsuario).get();
-        perro1.setNombrePerro(idUsuario);
-        
         perro1.setNombrePerro(nombrePerro);
-//        perro1.setUsuarioPerro(idUsuario);
         perro1.setRazaPerro(razaPerro);
-//        perro1.setNacimientoPerro(nacimientoPerro);
         perro1.setTamanioPerro(tamanioPerro);
-        perro1.setBozalPerro(bozalPerro);
         perro1.setObservacionPerro(observacionPerro);
-        perro1.setDdjjPerro(ddjjPerro);
         perro1.setFechaAltaPerro(new Date());
         perro1.setActivoPerro(true);
         perro1.setPuntuacionPerro(0);
+
         perroRepositorio.save(perro1);
 
     }
 
-    public void modificarPerro(String nombrePerro, String razaPerro, String observacionPerro) throws Exception {
-
+    public void validar(String nombrePerro, String razaPerro,
+            String tamanioPerro) throws Exception {
         if (nombrePerro == null || nombrePerro.isEmpty()) {
             throw new Exception("No se puede ingresar un nombre nulo");
         }
         if (razaPerro == null || razaPerro.isEmpty()) {
             throw new Exception("No se puede ingresar una raza nula");
         }
+        if (tamanioPerro == null || tamanioPerro.isEmpty()) {
+            throw new Exception("No se puede ingresar un tamaño nulo");
+        }
+    }
+
+    public void modificarPerro(String idUsuario, String idPerro,
+            String nombrePerro, String razaPerro, String observacionPerro) throws Exception {
+        validar(nombrePerro, razaPerro, observacionPerro);
+
         if (observacionPerro == null || observacionPerro.isEmpty()) {
             throw new Exception("Ingrese una mínima descripción de su mascota para facilitar la selección del Walker");
         }
 
-        Optional<Perro> respuesta = perroRepositorio.findById(nombrePerro);
+        Optional<Perro> respuesta = perroRepositorio.findById(idPerro);
         if (respuesta.isPresent()) {
 
-            Perro perro1 = new Perro();
-            perro1.setNombrePerro(nombrePerro);
-            perro1.setRazaPerro(razaPerro);
-            perro1.setObservacionPerro(observacionPerro);
+            Perro perro1 = respuesta.get();
+            if (perro1.getUsuarioPerro().getIdUsuario().equals(idUsuario)) {
 
-            perroRepositorio.save(perro1);
+                perro1.setNombrePerro(nombrePerro);
+                perro1.setRazaPerro(razaPerro);
+                perro1.setObservacionPerro(observacionPerro);
+
+                perroRepositorio.save(perro1);
+            } else {
+                throw new Exception("No tiene permisos suficientes para realizar la modificación.");
+            }
+
+        } else {
+            throw new Exception("No existe un perro con el modificador solicitado");
         }
     }
 //Acá tendría q traer el id del perro q busco para hacer la modificación tanto para deshab y hab
 
-    public void deshabilitarPerro(String idPerro) throws Exception {
+    public void deshabilitarPerro(String idUsuario, String idPerro) throws Exception {
+
         Optional<Perro> respuesta = perroRepositorio.findById(idPerro);
         if (respuesta.isPresent()) {
+            Perro perro1 = respuesta.get();
+            if (perro1.getUsuarioPerro().getIdUsuario().equals(idUsuario)) {
 
-            Perro perro1 = new Perro();
-            perro1.setActivoPerro(false);
-            perro1.setFechaModPerro(new Date());
+                perro1.setActivoPerro(false);
+                perro1.setFechaModPerro(new Date());
 
-            perroRepositorio.save(perro1);
+                perroRepositorio.save(perro1);
+            } else {
+                throw new Exception("No tiene permisos suficientes para realizar la modificación.");
+            }
+
+        } else {
+            throw new Exception("No existe un perro con el modificador solicitado");
         }
     }
 
-    public void habilitarPerro(String nombrePerro) throws Exception {
-        Optional<Perro> respuesta = perroRepositorio.findById(nombrePerro);
+    public void habilitarPerro(String idUsuario,String idPerro) throws Exception {
+       Optional<Perro> respuesta = perroRepositorio.findById(idPerro);
         if (respuesta.isPresent()) {
-            Perro perro1 = new Perro();
-            perro1.setActivoPerro(true);
-            perro1.setFechaModPerro(null);
+            Perro perro1 = respuesta.get();
+            if (perro1.getUsuarioPerro().getIdUsuario().equals(idUsuario)) {
 
-            perroRepositorio.save(perro1);
+                perro1.setActivoPerro(true);
+                perro1.setFechaAltaPerro(new Date());
+
+                perroRepositorio.save(perro1);
+            } else {
+                throw new Exception("No tiene permisos suficientes para realizar la modificación.");
+            }
+
+        } else {
+            throw new Exception("No existe un perro con el modificador solicitado");
         }
     }
 }
