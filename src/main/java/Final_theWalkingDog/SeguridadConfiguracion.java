@@ -18,13 +18,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SeguridadConfiguracion extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    @Qualifier("usuarioServicio")
+//    @Qualifier("usuarioServicio")
     public UsuarioServicios usuarioServicio;
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-                auth.userDetailsService(usuarioServicio)
-                .passwordEncoder(new BCryptPasswordEncoder());
+//                auth.userDetailsService(usuarioServicio)
+//                .passwordEncoder(new BCryptPasswordEncoder());
     }
     
     @Override
@@ -35,13 +35,13 @@ public class SeguridadConfiguracion extends WebSecurityConfigurerAdapter {
                             .permitAll()
                 .and().formLogin()
                              .loginPage("/iniciosesionusuario")
-                                        .loginProcessingUrl("/logincheck")//y esto?
+                                        .loginProcessingUrl("/logincheck")
                                         .usernameParameter("username")
                                         .passwordParameter("password")
                                         .defaultSuccessUrl("/perfilusuario")
                                         .permitAll()
                              .and().logout()
-                             .logoutUrl("/loguot")
+                             .logoutUrl("/logout")
                             .logoutSuccessUrl("/")
                             .permitAll();
 

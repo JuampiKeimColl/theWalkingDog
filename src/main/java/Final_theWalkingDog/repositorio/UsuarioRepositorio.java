@@ -18,8 +18,8 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface UsuarioRepositorio extends JpaRepository<Usuario,String> {
     
-    @Query("SELECT a from Usuario a WHERE a.email LIKE :email AND a.activo = true")
-	public Usuario buscarPorEmail(@Param("email") String email);
+    @Query("SELECT a from Usuario a WHERE a.correoUsuario LIKE :email AND a.activoUsuario = 1")
+    public Usuario buscarPorEmail(@Param("email") String email);
     
     
 }
