@@ -2,13 +2,21 @@ package Final_theWalkingDog.servicios;
 
 import Final_theWalkingDog.entidades.Usuario;
 import Final_theWalkingDog.repositorio.UsuarioRepositorio;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioServicios {
+public class UsuarioServicios implements UserDetailsService{
 
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
@@ -126,4 +134,24 @@ public class UsuarioServicios {
             throw new Exception("La editorial no fue encontrada");
         }
     }
-}
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Usuario usuario1 = usuarioRepositorio.buscarPorEmail(email);
+		
+		if (usuario1 != null) {
+			List<GrantedAuthority> permissions = new ArrayList<>();
+			GrantedAuthority p = new SimpleGrantedAuthority("ROLE_USUARIO_REGISTRADO");
+			permissions.add(p);
+//			ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+//			HttpSession session = attr.getRequest().getSession(true);
+//			session.setAttribute("usuario", usuario1);
+                        User user = new User (usuario1.getCorreoUsuario(), usuario1.getContraseniaUsuario(), permissions);
+			return user;
+		}else {
+                    return null;
+                }
+
+         } }
