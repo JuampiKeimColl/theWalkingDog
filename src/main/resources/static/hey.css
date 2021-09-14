@@ -1,0 +1,10 @@
+body{
+    background-image: url(imagenes/hey.jpg);
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-align: center;
+background-color: cornsilk;
+    margin-top: 700px;
+}

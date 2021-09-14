@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'FuenteTWD';
+    src: url(../static/abc.ttf);
+}
+
+.registro{
+    background-color: #377D7A;
+    width: 350px;
+    height: 500px;
+    border-radius: 2%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.registro .btn{
+    border-color: black;
+}
